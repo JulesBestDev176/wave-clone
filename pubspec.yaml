@@ -36,9 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   pretty_qr_code: ^3.3.0
   toggle_switch: ^2.3.0
-  flutter_contacts: ^1.1.9+2
   loader_overlay: ^4.0.0
   camera: ^0.11.1
+  flutter_contacts: ^1.1.9+2
 
 
 
@@ -80,6 +80,11 @@ flutter:
     - assets/images/uba.png
     - assets/images/orabank.png
     - assets/images/sunubrt.png
+    - assets/images/pays/
+    - assets/images/pays/BF.png
+    - assets/images/pays/CI.png
+    - assets/images/pays/ML.png
+    - assets/images/pays/SN.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

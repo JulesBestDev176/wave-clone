@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:wave/models/options.dart';
 import 'package:wave/models/transaction.dart';
 import 'package:wave/screens/bank_screen.dart';
-import 'package:wave/screens/credit_screen.dart';
 import 'package:wave/screens/settings_screen.dart';
+import 'package:wave/screens/transaction_screen.dart';
 import 'package:wave/screens/transfer_screen.dart';
 import 'package:wave/screens/transport_screen.dart';
 import 'package:wave/widgets/card_widget.dart';
@@ -148,7 +148,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               case 2:
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) {
-                                    return const CreditScreen();
+                                    return const OperationScreen(
+                                      isTransfer: false,
+                                    );
                                   },
                                 ));
                                 break;
@@ -234,40 +236,48 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 40),
+              child: Center(
+                child: Container(
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withOpacity(0.3), // Couleur avec opacité
+                    borderRadius: BorderRadius.circular(20), // Même borderRadius que le bouton
+                  ),
+                  child: GestureDetector(
 
-                    decoration: BoxDecoration(
-
-                      color: Theme.of(context).primaryColor.withOpacity(.3),
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    ),
-                    height: 40,
-                    width: 130,
-                    child: const Row(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const TransactionScreen(),
+                      ));
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(Icons.search, size: 20, color: Color(0xff4749cd)),
-                          SizedBox(width: 5),
+                          Icon(
+                            Icons.search,
+                            color: Color(0xff4749cd),
+                          ),
                           Text(
                             "Rechercher",
-                            style: TextStyle(
-                              color: Color(0xff4749cd),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: TextStyle(color: Color(0xff4749cd)),
                           )
-                        ],
-                      )
+                        ]
+                      ),
+                    )
+                  )
 
-                  ),
                 ),
-                const SizedBox(
-                  height: 1000,
-                ),
-              ],
+              ),
+            )
+
+
+
+            ],
             ),
           ),
         ],

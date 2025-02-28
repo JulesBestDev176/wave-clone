@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wave/screens/account_screen.dart';
+import 'package:wave/screens/plafond_screen.dart';
+import 'package:wave/screens/transfer_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -54,22 +57,30 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             shrinkWrap: true,
                             physics: const ClampingScrollPhysics(),
                             children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(vertical: 16),
-                                child: const Row(
-                                  children:  [
-                                    Icon(
-                                      Icons.account_box_outlined,
-                                      size: 30,
-                                    ),
-                                    SizedBox(width: 16),
-                                    Flexible(child: Text(
-                                      "Ajouter un autre compte",
-                                      style: TextStyle(fontSize: 16),
-                                    ))
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const AddAccountScreen()),
+                                  );
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(vertical: 16),
+                                  child: const Row(
+                                    children:  [
+                                      Icon(
+                                        Icons.account_box_outlined,
+                                        size: 30,
+                                      ),
+                                      SizedBox(width: 16),
+                                      Flexible(child: Text(
+                                        "Ajouter un autre compte",
+                                        style: TextStyle(fontSize: 16),
+                                      ))
+                                    ],
+                                  ),
                                 ),
-                              ),
+                              )
 
                             ],
                           ),
@@ -205,22 +216,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                               ),
 
-                              Container(
-                                padding: const EdgeInsets.symmetric(vertical: 16),
-                                child: const Row(
-                                  children:  [
-                                    Icon(
-                                      CupertinoIcons.square_favorites_fill,
-                                      size: 30,
-                                    ),
-                                    SizedBox(width: 16),
-                                    Flexible(child: Text(
-                                      "Vérifiez votre plafond",
-                                      style: TextStyle(fontSize: 16),
-                                    ))
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) {
+                                      return const PlafondScreen(
+                                      );
+                                    },
+                                  ));
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(vertical: 16),
+                                  child: const Row(
+                                    children:  [
+                                      Icon(
+                                        CupertinoIcons.square_favorites_fill,
+                                        size: 30,
+                                      ),
+                                      SizedBox(width: 16),
+                                      Flexible(child: Text(
+                                        "Vérifiez votre plafond",
+                                        style: TextStyle(fontSize: 16),
+                                      ))
+                                    ],
+                                  ),
                                 ),
-                              ),
+                              )
 
 
 
