@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wave/models/trajetFavoris.dart';
 import 'package:wave/screens/arret_screen.dart';
-import 'package:wave/screens/arrets_screen.dart';
 
 class TransportScreen extends StatelessWidget {
   const TransportScreen({Key? key}) : super(key: key);
@@ -287,7 +286,11 @@ Widget cardVideWidget( ) {
 
 Widget trajetWidget() {
   return Container(
-    color: Colors.white,
+
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      color: Colors.white,
+    ),
     child: ListView.builder(
       shrinkWrap: true,
       itemCount: TrajetFavoris.trajets.length,
@@ -296,6 +299,7 @@ Widget trajetWidget() {
         return Padding(
           padding: EdgeInsets.all(8),
           child: Column(
+
             children: [
               Padding(
                 padding: const EdgeInsets.all(4.0),
@@ -342,7 +346,9 @@ Widget trajetWidget() {
                   ],
                 ),
               ),
-              Row(
+              TrajetFavoris.trajets.length == index + 1 ?
+               Row()
+              :Row(
                 children: [
                   Expanded(
                       child: Divider(
@@ -353,6 +359,7 @@ Widget trajetWidget() {
                   )
                 ]
               )
+
             ],
           )
 

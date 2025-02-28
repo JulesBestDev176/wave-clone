@@ -79,7 +79,7 @@ class _OperationScreenState extends State<OperationScreen> {
               Navigator.pop(context);
             },
             icon:
-            Icon(Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back)),
+            Icon(Icons.arrow_back)),
         title: Text(
           widget.isTransfer ? "Envoyer de l'argent" : "Achat Crédit",
           style: const TextStyle(fontWeight: FontWeight.w500),

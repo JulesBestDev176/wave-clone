@@ -150,7 +150,7 @@ class _PhoneInputFieldState extends State<PhoneInputField> {
           GestureDetector(
             onTap: _showCountryPicker,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(color: Colors.blue.shade200, width: 2),

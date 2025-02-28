@@ -22,10 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title:
           const Text('Paramètres', style: TextStyle(color: Colors.black)),
           centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(CupertinoIcons.back, color: Colors.black),
-            onPressed: () => Navigator.pop(context),
-          ),
+
         ),
         body: SafeArea(
             child: CustomScrollView(slivers: [
